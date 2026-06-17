@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda Santiago & Alejandra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           ESTILOS GENERALES Y PC (PANTALLAS GRANDES)
+           ========================================================================== */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            /* Fondo para Computadoras */
+            background-image: url('fondocambio.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Efecto fijo exclusivo para PC */
+            background-color: #fafafa;
+            font-family: 'Arial', sans-serif;
+            color: #6d6d6d;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Sección Inicial */
+        .boton-play {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            margin-bottom: 40px;
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
+        }
+
+        .circulo-play {
+            width: 45px;
+            height: 45px;
+            background-color: #6d6d6d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .boton-play:hover .circulo-play { transform: scale(1.1); }
+
+        .texto-play {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+        }
+
+        .nombres {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            margin: 0 0 10px 0;
+            font-weight: normal;
+        }
+
+        .fecha {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+    .foto-boda {
+    width: 100%;
+    max-width: 300px; /* 👈 Cambia esto al tamaño que prefieras (ej. 400px, 50%, etc.) */
+    border: 6px solid white; /* Un poco más delgado para fotos pequeñas */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    margin-bottom: 30px; /* Reducido para que no quede tanto espacio vacío abajo */
+    box-sizing: border-box;
+    display: block; /* Asegura que se comporte bien con los márgenes */
+    margin-left: auto; /* 👈 Opcional: Centra la foto si es más pequeña que su contenedor */
+    margin-right: auto; /* 👈 Opcional: Centra la foto */
+}
+
+        /* Sección Contador */
+        .contador-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .bloque { width: 75px; }
+
+        .numero {
+            background-color: #9c2727;
+            color: white;
+            font-size: 1.8rem;
+            padding: 15px 5px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .etiqueta {
+            background-color: #d15a5a;
+            color: white;
+            font-size: 0.8rem;
+            padding: 4px 0;
+            margin-top: 3px;
+            border-radius: 2px;
+        }
+
+        .frase-boda {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        /* Sección Familia */
+        .seccion-familia {
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contenedor-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px; 
+            width: 100%;
+            max-width: 950px; 
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.92); /* Fondo blanco semi-transparente para asegurar legibilidad */
+            border: 1px solid #dcdcdc;
+            padding: 40px 30px;
+            flex: 1; 
+            min-height: 250px; 
+            text-align: center;
+            box-sizing: border-box; 
+        }
+
+        .titulo-card {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: #6d6d6d;
+            margin-bottom: 20px;
+        }
+
+        .info-padres {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .rol {
+            font-weight: bold;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Sección Eventos */
+        .contenedor-tarjetas {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px;
+        }
+
+        .tarjeta-evento {
+            background: rgba(255, 255, 255, 0.92); /* Fondo blanco semi-transparente */
+            border: 1px solid #dcdcdc; 
+            padding: 40px 30px;
+            width: 320px;
+            text-align: center;
+            border-radius: 2px; 
+        }
+
+        .icono-circular {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #4a4a4a;
+            border-radius: 50%;
+            margin: 0 auto 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .titulo-tarjeta {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #6d6d6d;
+            margin-bottom: 20px;
+        }
+
+        .texto-info {
+            color: #888;
+            margin: 5px 0;
+            font-size: 1.1rem;
+        }
+
+.boton-llegar {
+    background-color: #7a2525 !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 0.9rem !important;
+    
+    /* AJUSTES PARA EL TAMAÑO */
+    padding: 10px 25px !important; /* Controla el tamaño: alto y ancho */
+    width: auto !important;        /* Hace que el botón solo ocupe el espacio del texto */
+    display: inline-block !important; /* Evita que se estire a lo ancho */
+    
+    /* AJUSTES PARA SEPARARLO */
+    margin-top: 30px !important;   /* Espacio superior para despegarlo del texto */
+    margin-bottom: 10px !important;
+    text-decoration: none !important;
+}
+        
+        .seccion-final {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .card-final {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #dcdcdc;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto 40px auto; /* Centrado horizontal */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .boton-confirmar {
+            background-color: #7a2525;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .nombres-cierre {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            margin: 10px 0;
+        }
+
+        .boton-pdf {
+            background-color: #7a2525;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           NUEVOS EFECTOS DE APARICIÓN ADAPTADOS Y POLIZADOS
+           ========================================================================== */
+        
+        /* 1. Fondo general o tarjetas base (Desplazamiento Suave) */
+        .aparecer-grupo {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+            will-change: opacity, transform;
+        }
+        .aparecer-grupo.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 2. Efecto para las letras (Nombres, Frases y Títulos) */
+        .letras-efecto {
+            opacity: 0;
+            filter: blur(10px);
+            transform: scale(0.92);
+            transition: opacity 1.2s cubic-bezier(0.1, 0.8, 0.2, 1), 
+                        filter 1.2s cubic-bezier(0.1, 0.8, 0.2, 1), 
+                        transform 1.2s cubic-bezier(0.1, 0.8, 0.2, 1);
+            will-change: opacity, filter, transform;
+        }
+        .letras-efecto.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: scale(1);
+        }
+
+        /* 3. Efecto Pop-In para los Botones Rojos (Llamativos con rebote sutil) */
+        .boton-efecto {
+            opacity: 0;
+            transform: scale(0.6);
+            transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: opacity, transform;
+        }
+        .boton-efecto.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        /* Contenedor que agrupa las dos fotos */
+.contenedor-dos-fotos {
+    display: flex;
+    gap: 20px; /* Espacio de separación entre las dos fotos */
+    justify-content: center;
+    align-items: center;
+    max-width: 900px; /* Ancho máximo de la sección de fotos */
+    margin: 40px auto; /* Centra el contenedor y da espacio arriba/abajo */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo individual para cada una de las dos fotos */
+.foto-boda-doble {
+    width: 100%;
+    max-width: 300px; /* Evita que crezcan demasiado */
+    height: auto;
+    border: 6px solid white; /* Borde elegante estilo polaroid/boda */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra suave */
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Adaptación para celulares (se colocan en vertical si no hay espacio) */
+@media (max-width: 768px) {
+    .contenedor-dos-fotos {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .foto-boda-doble {
+        max-width: 90%; /* En móviles ocuparán casi todo el ancho disponible */
+    }
+}
+@media print {
+    /* 1. Forzar que se impriman todos los colores y fondos CSS */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* 2. Definir el tamaño físico de la hoja (A4 o Letter) */
+    @page {
+        size: A4; /* O 'letter' si usas tamaño Carta */
+        margin: 0; /* Cambia a 10mm si quieres márgenes físicos en blanco */
+    }
+
+    /* 3. Evitar que elementos importantes se corten a la mitad entre dos páginas */
+    .tu-tarjeta, table, tr, img {
+        page-break-inside: avoid;
+    }
+}
+
+@media print {
+    /* 1. Forzar impresión de fondos */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* 2. Ajuste del fondo para impresión */
+    body {
+        background-image: url('fondocambio.png') !important; /* O 'fotofondo.png' */
+        background-size: cover !important;
+        background-position: top center !important;
+        background-attachment: scroll !important; /* IMPORTANTE: Cambiar fixed a scroll */
+        background-repeat: no-repeat !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 3. Definir el tamaño de la hoja */
+    @page {
+        size: A4;
+        margin: 10mm; /* Deja un pequeño margen blanco para que no se corte al borde */
+    }
+
+    /* 4. Asegurar que las tarjetas no se corten */
+    .card, .tarjeta-evento, .card-final {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+        /* ==========================================================================
+           MEDIA QUERY: Optimizado para Móviles (Android e iPhone 6s / iOS)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            body {
+                /* Cambia el fondo para celulares */
+                background-image: url('fotofondo.png');
+                
+                /* IMPORTANTE PARA IPHONE: Evita que el fondo se deforme o se congele de forma errática */
+                background-attachment: scroll; 
+                background-size: cover;
+                background-position: center center;
+                padding: 20px 10px;
+            }
+
+            /* Reorganiza los bloques de lado a lado para que se vean uno abajo del otro en vertical */
+            .contenedor-cards, .contenedor-tarjetas {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 10px 0;
+            }
+
+            .tarjeta-evento, .card {
+                width: 100%;
+                max-width: 350px;
+                padding: 25px 20px;
+            }
+
+            .info-padres {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nombres {
+                font-size: 3.5rem;
+            }
+
+            .frase-boda {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="musica-fondo" src="musica.mp3" loop></audio>
+
+    <div class="container">
+        <section class="seccion-boda aparecer-grupo">
+            <button class="boton-play" id="reproductor" aria-label="Reproducir música de fondo">
+                <div class="circulo-play">
+                    <svg id="icono-play" viewBox="0 0 24 24" fill="white" width="20" height="20">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+                <span class="texto-play" id="texto-play">Dale play!</span>
+            </button>
+           <h1 class="nombres letras-efecto">Santiago & Alejandra</h1>
+            <p class="fecha">18/07/2026</p>
+            <img src="novios.png" alt="Boda de Santiago y Alejandra" class="foto-boda">
+        </section>
+
+        <section class="seccion-contador aparecer-grupo">
+    <div class="contador-container">
+        <div class="bloque"><div class="numero" id="dias">--</div><div class="etiqueta">Días</div></div>
+        <div class="bloque"><div class="numero" id="horas">--</div><div class="etiqueta">Horas</div></div>
+        <div class="bloque"><div class="numero" id="minutos">--</div><div class="etiqueta">Min.</div></div>
+        <div class="bloque"><div class="numero" id="segundos">--</div><div class="etiqueta">Seg.</div></div>
+    </div>
+    <h2 class="frase-boda letras-efecto">El tiempo de Dios es perfecto</h2>
+</section>
+    </div>
+
+    <section class="seccion-familia aparecer-grupo">
+        <div class="contenedor-cards">
+            <div class="card">
+                <h3 class="titulo-card letras-efecto">Nuestros Padres</h3>
+                <div class="info-padres">
+                    <div class="columna">
+                        <p class="rol">NOVIA</p>
+                        <p>Carlos Pazmiño</p>
+                        <p>Angela Lasso</p>
+                    </div>
+                    <div class="columna">
+                        <p class="rol">NOVIO</p>
+                        <p>Magdalena Cacuango</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="titulo-card letras-efecto">Padrinos</h3>
+                <p>Cecilia Imbaquingo</p>
+                <p>Cesar Cualchi</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="contenedor-tarjetas aparecer-grupo">
+        <div class="tarjeta-evento">
+            <img src="image1.png" alt="Ceremonia" class="imagen-icono">
+            <h3 class="titulo-tarjeta letras-efecto">Ceremonia</h3>
+            <p class="texto-info">Iglesia San Isidro del Inca</p>
+            <p class="texto-info">14:00 PM</p>
+            <a href="https://maps.app.goo.gl/sMfn5xmftgZyY4K48?g_st=aw" target="_blank" class="boton-llegar boton-efecto">¿Cómo llegar?</a>
+        </div>
+
+        <div class="tarjeta-evento">
+            <img src="image.png" alt="Celebracion" class="imagen-icono">
+            <h3 class="titulo-tarjeta letras-efecto">Celebración</h3>
+            <p class="texto-info">Inglaterra 29-52 y Acuña, edificio FEGAPI</p>
+            <p class="texto-info">Luego de la ceremonia</p>
+            <p class="texto-info">16:30 PM</p>
+            <a href="https://maps.app.goo.gl/nzc55iw9RVZGjcav5?g_st=aw" target="_blank" class="boton-llegar">¿Cómo llegar?</a>
+        </div>
+    </div>
+
+    <div class="contenedor-tarjetas aparecer-grupo">
+        <div class="tarjeta-evento">
+            <img src="dress.png" alt="Dress code" class="imagen-icono">
+            <h3 class="titulo-tarjeta letras-efecto">Dress code</h3>
+            <p class="texto-info" style="font-weight: bold; margin-top: 15px;">ELEGANTE</p>
+        </div>
+
+        <div class="tarjeta-evento">
+            <img src="regalo.png" alt="Regalo" class="imagen-icono">
+            <h3 class="titulo-tarjeta letras-efecto">Regalo</h3>
+            <p class="texto-info" style="font-size: 0.9rem;">
+                Lo que más queremos es compartir contigo nuestro gran día, pero si deseas regalarnos algo puedes hacerlo a la siguiente cuenta:
+            </p>
+            <p class="texto-info" style="margin-top: 15px;"><strong>Banco:</strong> Pichincha - Ahorros</p>
+            <p class="texto-info"><strong>Cuenta:</strong> 5531620100</p>
+            <p class="texto-info"><strong>CI:</strong> 1717649253</p>
+            <p class="texto-info"><strong>Titular:</strong> Klever Imbaquingo</p>
+        </div>
+    </div>
+    <div class="contenedor-tarjetas aparecer-grupo">
+        <div class="tarjeta-evento">
+            <img src="image500.png" alt="Ceremonia" class="imagen-icono">
+            <h3 class="titulo-tarjeta letras-efecto">Subir fotos</h3>
+            <p class="texto-info">¡Queremos ver la boda a través de tus ojos!</p>
+            <p class="texto-info" style="margin-bottom: 15px;">Sube tus fotos y videos:</p>
+             <button class="boton-llegar boton-efecto" onclick="window.open('https://drive.google.com/drive/folders/1WNxqTGFoGVvHLywKp7zZMJh8tfj42TgW?usp=sharing', '_blank')">Aquí</button>
+        </div> 
+
+        <div class="tarjeta-evento">
+            <img src="image600.png" alt="Ceremonia" class="imagen-icono">
+            <h3 class="titulo-tarjeta letras-efecto">Playlist</h3>
+            <p class="texto-info">¿Qué canción no puede faltar en nuestra fiesta?</p>
+            <p class="texto-info" style="margin-bottom: 15px;">¡Ayúdanos a armar la mejor lista de música!</p>
+            <button class="boton-llegar boton-efecto" onclick="window.open('https://www.youtube.com/playlist?list=PLTtLfDu1U8ic&jct=1mplDYmOQu4k0zWkk5F2pA', '_blank')">Sugerir música</button>
+        </div>
+    </div>
+  <div class="contenedor-dos-fotos">
+        <img src="foto1.jpeg" alt="Santiago y Alejandra 1" class="foto-boda-doble">
+        <img src="foto2.jpeg" alt="Santiago y Alejandra 2" class="foto-boda-doble">
+    </div>
+    <section class="seccion-final aparecer-grupo">
+        <div class="card-final">
+            <img src="image100.png" alt="Ceremonia" class="imagen-icono"> 
+            <h3 class="titulo-card letras-efecto">Confirma tu asistencia</h3>
+            <p class="texto-info">Para nosotros es muy importante que confirmes esta invitación, o que nos cuentes si no nos puedes acompañar</p>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSd9nSqKVYhTCsneYT-tjuZLl3E48VI8jGTf5SBAuX3oafexzA/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+    <button class="boton-confirmar boton-efecto">CONFIRMA ACÁ</button>
+</a>
+        </div>
+        
+        <h2 class="frase-boda letras-efecto">¡Los esperamos para celebrar nuestro matrimonio!</h2>
+        <h2 class="nombres-cierre letras-efecto">Santiago & Alejandra</h2>
+        
+       <a href="Boda Santiago & Alejandra.pdf" download="Boda_Santiago_y_Alejandra.pdf" class="boton-pdf boton-efecto">
+    PDF RECUERDO
+</a>
+    </section>
+
+    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #888; margin-top: 20px;">
+        &copy; 2026 
+        <a href="https://wa.me/593960934663" target="_blank" style="color: #888; text-decoration: underline;">
+            Invitaciones digitales Loja 
+        </a> 
+         Contacto: 0960934663
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // --- CONTROL DE AUDIO ---
+            const musica = document.getElementById('musica-fondo');
+            const botonPlay = document.getElementById('reproductor');
+            const iconoPlay = document.getElementById('icono-play');
+            const textoPlay = document.getElementById('texto-play');
+
+            botonPlay.addEventListener('click', function() {
+                if (musica.paused) {
+                    musica.play();
+                    // Cambia el diseño del icono SVG a Pausa
+                    iconoPlay.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+                    textoPlay.textContent = "Pausar";
+                } else {
+                    musica.pause();
+                    // Restablece el diseño del icono SVG a Play
+                    iconoPlay.innerHTML = '<path d="M8 5v14l11-7z"/>';
+                    textoPlay.textContent = "Dale play!";
+                }
+            });
+
+
+            // --- OBSERVADOR DE INTERSECCIÓN PARA EFECTOS ---
+            const elementosAparecer = document.querySelectorAll('.aparecer-grupo, .letras-efecto, .boton-efecto');
+
+            const opciones = {
+                root: null,
+                rootMargin: "0px 0px -60px 0px", 
+                threshold: 0.05
+            };
+
+            const observador = new IntersectionObserver(function (entradas, observador) {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        entrada.target.classList.add('visible');
+                        observador.unobserve(entrada.target); 
+                    }
+                });
+            }, opciones);
+
+            elementosAparecer.forEach(elemento => {
+                observador.observe(elemento);
+            });
+        });
+
+        // Configura la fecha objetivo: 18 de julio de 2026 a las 14:00:00
+    const fechaObjetivo = new Date("July 18, 2026 14:00:00").getTime();
+
+    const actualizarContador = setInterval(function() {
+        const ahora = new Date().getTime();
+        const distancia = fechaObjetivo - ahora;
+
+        // Cálculos de tiempo
+        const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+        // Mostrar resultados
+        document.getElementById("dias").innerHTML = dias;
+        document.getElementById("horas").innerHTML = horas;
+        document.getElementById("minutos").innerHTML = minutos;
+        document.getElementById("segundos").innerHTML = segundos;
+
+        // Si el contador llega a cero
+        if (distancia < 0) {
+            clearInterval(actualizarContador);
+            document.querySelector(".contador-container").innerHTML = "¡Es nuestro gran día!";
+        }
+    }, 1000);
+    </script>
+</body>
+</html>
